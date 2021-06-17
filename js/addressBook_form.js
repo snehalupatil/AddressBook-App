@@ -34,6 +34,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+const zip = document.querySelector('#zip');
+    const zipError = document.querySelector('.text-error');
+    zip.addEventListener('input', function () {
+        if (zip.value.length == 0) {
+            zipError.textContent = "";
+            return;
+        }
+        try {
+            (new AddressBookData()).zip = zip.value;;
+            zipError.textContent = "";
+        } catch (e) {
+            zipError.textContent = e;
+        }
+    });
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const phone = document.querySelector('#phone');
     const phoneError = document.querySelector('.text-error');
