@@ -7,7 +7,7 @@ class AddressBook{
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if(nameRegex.test(name))
             this._name = name;
-        else throw 'Name is Invalid';
+        else throw 'Name is invalid';
     }
   
     //getter and setter for address
@@ -17,7 +17,7 @@ class AddressBook{
       let addressRegex = RegExp('^[A-Za-z]{2,}$');
       if(addressRegex.test(address))
             this._address = address;
-      else throw 'Address is Invalid';
+      else throw 'Address is invalid';
     }
   
     //getter and setter for Phone Number
@@ -26,7 +26,7 @@ class AddressBook{
       let phoneRegex = RegExp('^[0-9]{2}[\\s][789]{1}[0-9]{9}$');
       if(phoneRegex.test(phone))
             this._phone = phone;
-      else throw 'Phone Number is Invalid';      
+      else throw 'Phone Number is invalid';      
     }
   
     //getter and setter for Zip code
@@ -37,14 +37,14 @@ class AddressBook{
       let zipRegex = RegExp('^[0-9]{3}[\\s][0-9]{3}$');
           if(zipRegex.test(zip))
               this._zip = zip; 
-          else throw 'Zip Code is Invalid';
+          else throw 'Zip is invalid';
     }
-  
+    //getter and setter for Zip code
     get city(){ return this._city; }
     set city(city){
         this._city=city;
     }
-    
+    //getter and setter for Zip code
     get state(){ return this._state; }
     set state(state){
         this._state=state;
