@@ -49,7 +49,7 @@ const zip = document.querySelector('#zip');
         }
     });
 
-    
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const phone = document.querySelector('#phone');
     const phoneError = document.querySelector('.text-error');
@@ -117,4 +117,19 @@ const createEmployeePayroll = () => {
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
+}
+
+//UC 8
+
+function createAndUpdateStorage(addressBookData){
+
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+
+    if(addressBookList != undefined){
+        addressBookList.push(addressBookData);
+    } else{
+        addressBookList = [addressBookData]
+    }
+    alert(addressBookList.toString());
+    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList))
 }
