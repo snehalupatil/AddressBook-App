@@ -49,6 +49,7 @@ const zip = document.querySelector('#zip');
         }
     });
 
+    
 window.addEventListener('DOMContentLoaded', (event) => {
     const phone = document.querySelector('#phone');
     const phoneError = document.querySelector('.text-error');
@@ -65,3 +66,55 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 });
+
+const save = () => {
+    try{
+        let addressBookData = createAddressBook();
+        createAndUpdateStorage(addressBookData);
+    }catch(e){
+        return;
+    }
+}
+
+const createEmployeePayroll = () => {
+    let addressBookData = new AddressBook();
+    try{
+        addressBookData.name = getInputValueById('#name');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try{
+        addressBookData.address = getInputValueById('#address');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try{
+        addressBookData.phone = getInputValueById('#phone');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try{
+        addressBookData.name = getInputValueById('#name');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try{
+    addressBookData.zip = getInputValueById('#zip');
+    }catch(e){
+        setTextValue('.text-error',e)
+    }
+    addressBookData.city = getInputValueById('[name=city]');
+    addressBookData.state = getInputValueById('[name=state]');
+    
+    alert(addressBookData.toString());
+    return addressBookData;            
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
