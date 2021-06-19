@@ -46,3 +46,8 @@ const createAddressBookJSON = () => {
 
     return personListLoacal;
 }
+
+//UC-13
+const getAddressBookDataFromStorage = () => {
+    return localStorage.getItem('AddressBookList') ? JSON.parse(localStorage.getItem('AddressBookList')) : [];
+}
