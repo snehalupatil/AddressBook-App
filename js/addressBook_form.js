@@ -133,3 +133,18 @@ function createAndUpdateStorage(addressBookData){
     alert(addressBookList.toString());
     localStorage.setItem("AddressBookList",JSON.stringify(addressBookList))
 }
+
+//UC-9
+const resetForm = () => {
+    setValue('#name','');
+    setValue('#phone','');
+    setValue('#address','');
+    setValue('#city','');
+    setValue('#state','');
+    setValue('#zip','');
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
