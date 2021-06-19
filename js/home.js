@@ -51,3 +51,16 @@ const createAddressBookJSON = () => {
 const getAddressBookDataFromStorage = () => {
     return localStorage.getItem('AddressBookList') ? JSON.parse(localStorage.getItem('AddressBookList')) : [];
 }
+
+//UC14
+const remove = (node) => {
+    let addressBookData = addressBookList.find(addData => addData._id == node.id);
+    if (!addressBookData) return;
+    const index = addressBookList
+                  .map(addData => addData._id)
+                  .indexOf(addressBookData._name);
+    addressBookList.splice(index,1);
+    localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
+    document.querySelector(".person-count").textContent = addressBookList.length;
+    createInnerHTML();
+}
